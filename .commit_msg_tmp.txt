@@ -1,3 +1,0 @@
-docs: 发布鸿蒙 yxtsdk 对外接入 Demo
-
-提供最小可运行工程与 README 接入说明，依赖 yxtsdk，便于第三方集成验证。
