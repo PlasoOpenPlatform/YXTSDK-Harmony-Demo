@@ -1,0 +1,8 @@
+{
+  "src": [
+    "pages/Index",
+    "env/EnvSettingsPage",
+    "pages/MainPage",
+    "pages/LiveClassPage"
+  ]
+}

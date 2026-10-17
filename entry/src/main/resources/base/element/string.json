@@ -1,0 +1,104 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "hosyxtsdk demo module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "SDK Demo Ability"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "YXT SDK Demo"
+    },
+    {
+      "name": "permission_camera_reason",
+      "value": "用于课堂视频"
+    },
+    {
+      "name": "permission_microphone_reason",
+      "value": "用于课堂音频"
+    },
+    {
+      "name": "sdk_demo_title",
+      "value": "YXT SDK Demo"
+    },
+    {
+      "name": "sdk_demo_label_username",
+      "value": "用户登录名(当前仅支持学生)"
+    },
+    {
+      "name": "sdk_demo_hint_username",
+      "value": "请输入用户登录名"
+    },
+    {
+      "name": "sdk_demo_btn_login",
+      "value": "开始"
+    },
+    {
+      "name": "sdk_demo_btn_live_class",
+      "value": "实时课堂"
+    },
+    {
+      "name": "sdk_demo_embed_toggle",
+      "value": "内嵌显示"
+    },
+    {
+      "name": "sdk_demo_btn_live_fullscreen",
+      "value": "全屏"
+    },
+    {
+      "name": "sdk_demo_btn_back",
+      "value": "返回"
+    },
+    {
+      "name": "sdk_demo_btn_logout",
+      "value": "退出登录"
+    },
+    {
+      "name": "sdk_demo_live_page_title",
+      "value": "实时课堂"
+    },
+    {
+      "name": "sdk_demo_env_page_title",
+      "value": "对接配置"
+    },
+    {
+      "name": "sdk_demo_btn_env_settings",
+      "value": "填写 appId / signKey"
+    },
+    {
+      "name": "sdk_demo_env_hint",
+      "value": "请填写贵司在云学堂开通的 appId 和 signKey，未填写将无法初始化 SDK 与登录。"
+    },
+    {
+      "name": "sdk_demo_env_app_id",
+      "value": "appId"
+    },
+    {
+      "name": "sdk_demo_env_sign_key",
+      "value": "signKey"
+    },
+    {
+      "name": "sdk_demo_status_loading",
+      "value": "正在获取 Token…"
+    },
+    {
+      "name": "sdk_demo_err_missing_credentials",
+      "value": "请先填写正确的 appId 和 signKey"
+    },
+    {
+      "name": "sdk_demo_err_empty_username",
+      "value": "请输入用户登录名"
+    },
+    {
+      "name": "sdk_demo_err_get_token_failed",
+      "value": "获取 Token 失败，请检查用户名与 appId / signKey"
+    },
+    {
+      "name": "sdk_demo_err_update_token_failed",
+      "value": "Token 校验失败"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\1\\.ohos\\config\\default_yxt-hos-sdkdemo_CZG65dwNF8g5BhaXozNYDCxDWWu9rl8PwmjdWi4kkic=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001AF599E73CD225BEA02670CF493692363C746481CC564863F2A3CCC2E2BE0A0FBB4E6B7DE13D8A",
+          "profile": "C:\\Users\\1\\.ohos\\config\\default_yxt-hos-sdkdemo_CZG65dwNF8g5BhaXozNYDCxDWWu9rl8PwmjdWi4kkic=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\1\\.ohos\\config\\default_yxt-hos-sdkdemo_CZG65dwNF8g5BhaXozNYDCxDWWu9rl8PwmjdWi4kkic=.p12",
+          "storePassword": "0000001AEFDAA3931B4FFE94822166A7D9AB4BDE2738B21AA47D6D78DDBEDD154CD2C826010B7384FD1D"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "targetSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "bundleName": "com.plaso.sdkdemo",
+        "buildOption": {
+          "strictMode": {
+            "useNormalizedOHMUrl": true
+          },
+          "arkOptions": {
+            "buildProfileFields": {
+              "SERVER_ENV": "d!"
+            }
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

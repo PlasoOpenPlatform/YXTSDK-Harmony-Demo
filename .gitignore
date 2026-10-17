@@ -1,0 +1,14 @@
+﻿/node_modules
+/oh_modules
+/build
+/entry/build
+/entry/oh_modules
+/.idea
+/.hvigor
+/local.properties
+*.har
+*.hap
+*.hsp
+.DS_Store
+oh-package-lock.json5
+entry/oh-package-lock.json5

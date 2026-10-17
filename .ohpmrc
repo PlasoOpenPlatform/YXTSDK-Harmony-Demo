@@ -1,0 +1,7 @@
+# OHPM install-only config for yxt-hos-sdkdemo (no publish credentials).
+# Pull yxtsdk / @yxt/* / styleupime-yxt from private registries.
+
+registry=http://nexus.plaso.cn:8088/repos/ohpm,http://nexus.plaso.cn:8088/repos/ohos,https://repo.harmonyos.com/ohpm/
+@ohos:registry=http://nexus.plaso.cn:8088/repos/ohos,https://repo.harmonyos.com/ohpm/
+@yxt:registry=http://nexus.plaso.cn:8088/repos/yxt
+strict_ssl=false
