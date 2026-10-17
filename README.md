@@ -189,23 +189,25 @@ build() {
 
 壳页本身不承载业务 UI，只负责解析 URL 参数（如 `dhost`、`rhost`、`initjs`）、展示加载态，并动态引入远端脚本。
 
-### 6.2 为何 Demo / 宿主需要单独放置
+### 6.2 接入默认：拷贝到宿主 `resfile`（必做）
 
-鸿蒙 **HAR 包内的 `resfile` 不会自动合并进宿主 HAP**。若宿主工程没有自己的 `new_zy.html`，仅依赖 `yxtsdk` / `@yxt/live` HAR，进历史课或相关 Web 页时可能找不到本地壳页。
+鸿蒙 **HAR 包内的 `resfile` / `rawfile` 不会自动合并进宿主 HAP**。当前发行阶段，**正式接入默认要求**把壳页拷进宿主工程（与 Android 放 `assets` 一致），不要依赖「只引 HAR、不拷文件」。
 
-因此本 Demo 在宿主模块中放了一份：
+本 Demo 已放置：
 
 ```text
 entry/src/main/resources/resfile/new_zy.html
 ```
 
-`YxtSDK.init` → 课堂模块初始化时，SDK 还会从 live HAR 的 rawfile **抽出**壳页到应用沙箱 `filesDir/yxt_web`；宿主 **没有** `resfile/new_zy.html` 时，会回落到该目录。建议正式接入仍按 Demo 方式把文件拷进宿主 `resfile`，与 Android 放 `assets` 的习惯一致，减少路径差异。
+请按下方步骤复制到宿主；历史课 / 极速直播 / 教材等场景均以宿主 `resfile` 为准。
+
+> 说明（非接入步骤）：`YxtSDK.init` 时 SDK 仍可能从 live HAR rawfile 抽出一份到沙箱 `filesDir/yxt_web` 作内部回落。初期请勿把该回落当作正式接入方式；未拷贝宿主壳页时，部分场景（如教材）仍可能异常。
 
 ### 6.3 使用说明（接入方）
 
-1. 从本 Demo 复制 `entry/src/main/resources/resfile/new_zy.html` 到宿主同路径（`模块名/src/main/resources/resfile/new_zy.html`）。
+1. **必做**：从本 Demo 复制 `entry/src/main/resources/resfile/new_zy.html` 到宿主同路径（`模块名/src/main/resources/resfile/new_zy.html`）。
 2. **不要改文件名**；业务侧一般无需手动 `loadUrl`，由 SDK 在历史课 / 教材 WebView 等场景自动加载。
-3. 正常走 `YxtSDK.init` 即可；无需额外调用。若未拷贝到宿主 `resfile`，依赖 SDK 抽出到 `filesDir/yxt_web` 的回落路径（见上）。
+3. 正常走 `YxtSDK.init` 即可；无需额外调用抽出逻辑。
 4. 壳页依赖网络加载远端 JS；加载超时约 30 秒会显示「网络故障，刷新试试哦~」，可点刷新重试。
 5. 请保持与当前 `yxtsdk` 发行包配套的壳页版本；随意替换或删减可能导致历史课 / 教材页白屏。
 
@@ -229,6 +231,6 @@ entry/src/main/resources/resfile/new_zy.html
 - [ ] 已声明 `yxtsdk` `1.0.27` 依赖
 - [ ] Ability 四个生命周期均转发到 `YxtSDK`
 - [ ] 相机 / 麦克风权限已申请
-- [ ] 宿主已放置 `resources/resfile/new_zy.html`（或确认走 SDK `filesDir/yxt_web` 回落）
+- [ ] 宿主已放置 `resources/resfile/new_zy.html`（初期默认必做，勿仅依赖 SDK 沙箱回落）
 - [ ] `init` → `updateToken` 成功后再 `startLiveClass` 或嵌入 `YxtSdkGetLiveClassHomePage`
 - [ ] 真机进课可横屏全屏、正常开课；历史课堂 / 回放可打开
